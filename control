@@ -1,0 +1,6 @@
+Package: qbtbar
+Version: 1.0
+Maintainer: Alex Free
+Architecture: all
+Homepage: https://alex-free.github.io/qbtbar
+Description:  Transfer all of your current qBittorrent data to a different computer or new OS installation.

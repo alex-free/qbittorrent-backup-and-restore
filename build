@@ -1,0 +1,39 @@
+#!/bin/bash
+
+program=qbtbar
+version=v1.0
+
+rm -f $program-$version.deb $program-$version.zip
+
+if [ "$1" == "clean" ]; then
+    exit 0
+fi
+
+# Put temp directory in /tmp (or whatever the OS prefers).
+tmp=$(mktemp -d --tmpdir qbtbar.XXX)
+
+# When this script exits, automatically delete the temp directory.
+cleanup() 
+{ 
+    if [[ -e $tmp ]]; then
+        echo "Clearing temp files..."  
+        rm -r $tmp   
+    fi
+}
+trap cleanup EXIT
+
+cd "$(dirname "$0")"
+script_dir="$(realpath .)"
+
+mkdir $tmp/$program-$version
+mkdir $tmp/$program-$version/DEBIAN
+cp control $tmp/$program-$version/DEBIAN
+mkdir -p $tmp/$program-$version/usr/bin
+cp $program $tmp/$program-$version/usr/bin
+dpkg-deb --build $tmp/$program-$version
+mv $tmp/$program-$version.deb .
+
+rm -r $tmp
+mkdir -p $tmp/$program-$version
+cp -r qbtbar *.md images $tmp/$program-$version
+cd $tmp; chmod -R 777 *; zip -r "$script_dir"/$program-$version.zip $program-$version
