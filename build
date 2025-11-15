@@ -1,12 +1,26 @@
 #!/bin/bash
 
 program=qbtbar
-version=v1.0.1
+version=v1.0.2
 
 rm -f $program-$version.deb $program-$version.zip
 
-if [ "$1" == "clean" ]; then
+if [ "$1" = "clean" ]; then
     exit 0
+fi
+
+if sed --version >/dev/null 2>&1; then
+    echo "Info: using GNU sed"
+    bsd_sed=false
+else
+    echo "Info: using BSD sed"
+    bsd_sed=true
+fi
+
+if [ "$bsd_sed" == "true" ]; then
+    sed -i '' -E "s|^version=.*|version=$version|" $program
+else
+    sed -i'' -E "s|^version=.*|version=$version|" $program
 fi
 
 # Put temp directory in /tmp (or whatever the OS prefers).

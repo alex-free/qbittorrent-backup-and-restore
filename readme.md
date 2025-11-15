@@ -15,17 +15,17 @@ Transfer all of your current [qBittorrent](https://www.qbittorrent.org/) data to
 
 ## Downloads
 
-### Version 1.0.1 (9/16/2024)
+### Version 1.0.2 (11/14/2025)
 
 Changes:
 
-* Fixed restore mode, and improved overall code.
+* Support for qBittorrent-nox.
 
 ---------------------------------------
 
-* [qbtbar-v1.0.1.zip](https://github.com/alex-free/qbittorrent-backup-and-restore/releases/download/v1.0.1/qbtbar-v1.0.1.zip) _Portable Release for Linux._
+* [qbtbar-v1.0.2.zip](https://github.com/alex-free/qbittorrent-backup-and-restore/releases/download/v1.0.2/qbtbar-v1.0.2.zip) _Portable Release for Linux._
 
-* [qbtbar-v1.0.1.deb](https://github.com/alex-free/qbittorrent-backup-and-restore/releases/download/v1.0.1/qbtbar-v1.0.1.deb) _Deb package file for Linux._
+* [qbtbar-v1.0.2.deb](https://github.com/alex-free/qbittorrent-backup-and-restore/releases/download/v1.0.2/qbtbar-v1.0.2.deb) _Deb package file for Linux._
 
 ---------------------------------------
 
